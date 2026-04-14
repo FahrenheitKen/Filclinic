@@ -7,7 +7,6 @@ import ScrollToTop from './components/ScrollToTop'
 
 const Home = lazy(() => import('./pages/Home'))
 const About = lazy(() => import('./pages/About'))
-const Programs = lazy(() => import('./pages/Programs'))
 const Masterclass = lazy(() => import('./pages/Masterclass'))
 const Bootcamp = lazy(() => import('./pages/Bootcamp'))
 const Outcomes = lazy(() => import('./pages/Outcomes'))
@@ -38,7 +37,6 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/programs" element={<Programs />} />
             <Route path="/programs/masterclass" element={<Masterclass />} />
             <Route path="/programs/bootcamp" element={<Bootcamp />} />
             <Route path="/outcomes" element={<Outcomes />} />
@@ -51,9 +49,19 @@ export default function App() {
       <section className="py-10 sm:py-14 bg-gray-50 border-t border-gray-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-gold">Our Partners</span>
-          <div className="flex flex-wrap items-center justify-center gap-10 sm:gap-16 mt-6">
-            <img src="/photos/FDA.png" alt="FDA" className="h-24 sm:h-32 w-auto object-contain" />
-            <img src="/photos/Baraza.png" alt="Baraza" className="h-16 sm:h-20 w-auto object-contain" />
+          {/* Desktop: centered row */}
+          <div className="hidden sm:flex items-center justify-center gap-16 mt-6">
+            <img src="/photos/FDA.png" alt="FDA" className="h-32 w-auto object-contain" />
+            <img src="/photos/Baraza.png" alt="Baraza" className="h-20 w-auto object-contain" />
+          </div>
+          {/* Mobile: horizontal auto-scroll */}
+          <div className="sm:hidden mt-6 overflow-hidden">
+            <div className="flex items-center gap-12 animate-scroll-x w-max">
+              <img src="/photos/FDA.png" alt="FDA" className="h-20 w-auto object-contain flex-shrink-0" />
+              <img src="/photos/Baraza.png" alt="Baraza" className="h-14 w-auto object-contain flex-shrink-0" />
+              <img src="/photos/FDA.png" alt="FDA" className="h-20 w-auto object-contain flex-shrink-0" aria-hidden="true" />
+              <img src="/photos/Baraza.png" alt="Baraza" className="h-14 w-auto object-contain flex-shrink-0" aria-hidden="true" />
+            </div>
           </div>
         </div>
       </section>

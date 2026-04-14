@@ -5,9 +5,9 @@ export default function Footer() {
   return (
     <footer className="bg-navy text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10">
           {/* Brand */}
-          <div className="col-span-2 md:col-span-1">
+          <div className="sm:col-span-2 md:col-span-1">
             <img src="/logo.png" alt="Film Clinic Masterclass" className="h-12 sm:h-16 w-auto mb-4 brightness-0 invert" />
             <p className="text-gray-400 text-sm leading-relaxed">
               Practical filmmaking. Real production. Measurable outcomes.
@@ -18,7 +18,7 @@ export default function Footer() {
           <div>
             <h4 className="text-gold font-semibold uppercase tracking-wider text-sm mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {['Home', 'About', 'Programs', 'Outcomes', 'Contact'].map((item) => (
+              {['Home', 'About', 'Outcomes', 'Contact'].map((item) => (
                 <li key={item}>
                   <Link
                     to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
@@ -28,6 +28,16 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <a
+                  href="https://ustadifilms.ke/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-gold text-sm transition-colors"
+                >
+                  Ustadi Films
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -51,9 +61,9 @@ export default function Footer() {
                   +254 713 554560
                 </a>
               </li>
-              <li className="flex items-center gap-3">
-                <HiMail className="text-gold flex-shrink-0" />
-                <a href="mailto:info@filmclinicmasterclass.com" className="text-gray-400 hover:text-gold text-xs sm:text-sm transition-colors break-all">
+              <li className="flex items-start gap-3 min-w-0">
+                <HiMail className="text-gold flex-shrink-0 mt-0.5" />
+                <a href="mailto:info@filmclinicmasterclass.com" className="text-gray-400 hover:text-gold text-xs sm:text-sm transition-colors break-all leading-relaxed">
                   info@filmclinicmasterclass.com
                 </a>
               </li>
