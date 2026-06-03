@@ -6,18 +6,31 @@ const PHOTOS_DIR = join(import.meta.dirname, '..', 'public', 'photos')
 const MAX_WIDTH = 1600
 const JPEG_QUALITY = 80
 
+async function collectImages(dir) {
+  const entries = await readdir(dir, { withFileTypes: true })
+  let images = []
+  for (const entry of entries) {
+    const fullPath = join(dir, entry.name)
+    if (entry.isDirectory()) {
+      images = images.concat(await collectImages(fullPath))
+    } else if (/\.(jpe?g|png)$/i.test(entry.name)) {
+      images.push(fullPath)
+    }
+  }
+  return images
+}
+
 async function optimizeImages() {
-  const files = await readdir(PHOTOS_DIR)
-  const imageFiles = files.filter(f => /\.(jpe?g|png)$/i.test(f))
+  const imagePaths = await collectImages(PHOTOS_DIR)
 
   console.log(`Photos dir: ${PHOTOS_DIR}`)
-  console.log(`Found ${imageFiles.length} images to optimize\n`)
+  console.log(`Found ${imagePaths.length} images to optimize\n`)
 
   let totalBefore = 0
   let totalAfter = 0
 
-  for (const file of imageFiles) {
-    const filePath = join(PHOTOS_DIR, file)
+  for (const filePath of imagePaths) {
+    const label = filePath.replace(PHOTOS_DIR + '\\', '').replace(PHOTOS_DIR + '/', '')
     const inputBuffer = await readFile(filePath)
     const before = inputBuffer.length
 
@@ -39,14 +52,14 @@ async function optimizeImages() {
         totalBefore += before
         totalAfter += outputBuffer.length
         const saved = ((1 - outputBuffer.length / before) * 100).toFixed(1)
-        console.log(`${file}: ${fmt(before)} -> ${fmt(outputBuffer.length)} (${saved}% saved)`)
+        console.log(`${label}: ${fmt(before)} -> ${fmt(outputBuffer.length)} (${saved}% saved)`)
       } else {
         totalBefore += before
         totalAfter += before
-        console.log(`${file}: ${fmt(before)} (already optimal, skipped)`)
+        console.log(`${label}: ${fmt(before)} (already optimal, skipped)`)
       }
     } catch (err) {
-      console.error(`ERROR ${file}: ${err.message}`)
+      console.error(`ERROR ${label}: ${err.message}`)
     }
   }
 

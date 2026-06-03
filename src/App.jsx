@@ -12,6 +12,7 @@ const About = lazy(() => import('./pages/About'))
 const Masterclass = lazy(() => import('./pages/Masterclass'))
 const Bootcamp = lazy(() => import('./pages/Bootcamp'))
 const Outcomes = lazy(() => import('./pages/Outcomes'))
+const Gallery = lazy(() => import('./pages/Gallery'))
 const Contact = lazy(() => import('./pages/Contact'))
 
 function NotFound() {
@@ -49,6 +50,7 @@ export default function App() {
             <Route path="/programs/masterclass" element={<Masterclass />} />
             <Route path="/programs/bootcamp" element={<Bootcamp />} />
             <Route path="/outcomes" element={<Outcomes />} />
+            <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

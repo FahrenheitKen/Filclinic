@@ -140,6 +140,42 @@ export default function Bootcamp() {
         </div>
       </section>
 
+      {/* From Our Cohorts */}
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <SectionTitle
+          subtitle="From Our Cohorts"
+          title="Bootcamp in Action"
+          description="Real moments from our bootcamp cohorts — filmmakers learning, collaborating, and creating on set."
+        />
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mt-8 sm:mt-12">
+          {[
+            '_MG_7824.jpg', '_MG_7939.jpg', '_MG_7852.jpg',
+            'IMG_7910.jpg', '_MG_7960.jpg', '_MG_8030.jpg',
+          ].map((photo, i) => (
+            <div key={i} className="group relative overflow-hidden rounded-xl aspect-[4/3] shadow-lg">
+              <img
+                src={`/photos/bootcamp-cohort-1/${photo}`}
+                alt={`Film Clinic Bootcamp cohort production moment ${i + 1}`}
+                width="800"
+                height="600"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
+                decoding="async"
+              />
+              <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/30 transition-all duration-300" />
+            </div>
+          ))}
+        </div>
+        <div className="text-center mt-8">
+          <Link
+            to="/gallery"
+            className="bg-navy hover:bg-navy-light text-white font-bold px-8 py-3 rounded-full text-sm uppercase tracking-wider transition-all duration-200 shadow-lg inline-block"
+          >
+            View Full Gallery
+          </Link>
+        </div>
+      </section>
+
       {/* Selection Process */}
       <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <SectionTitle

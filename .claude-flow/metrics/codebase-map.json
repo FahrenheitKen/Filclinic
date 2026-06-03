@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-06-03T06:23:32.286Z",
+  "projectRoot": "C:\\laragon\\www\\Filclinic",
+  "structure": {
+    "hasPackageJson": true,
+    "hasTsConfig": false,
+    "hasClaudeConfig": true,
+    "hasClaudeFlow": true
+  },
+  "scannedAt": 1780467812287
+}
