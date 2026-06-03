@@ -49,7 +49,7 @@ export default function About() {
     <>
       {/* Hero */}
       <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
-        <img src="/photos/20230725_200937.JPG" alt="" className="absolute inset-0 w-full h-full object-cover" decoding="async" />
+        <img src="/photos/20230725_200937.JPG" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" loading="eager" decoding="async" fetchpriority="high" />
         <div className="absolute inset-0 bg-navy/85" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <span className="inline-block bg-gold/20 text-gold-light px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase mb-4">
@@ -80,10 +80,10 @@ export default function About() {
             </p>
           </div>
           <div className="grid grid-cols-2 gap-3 sm:gap-4">
-            <img src="/photos/20230719_150229.JPG" alt="Film Clinic" className="rounded-xl sm:rounded-2xl w-full h-36 sm:h-48 lg:h-64 object-cover shadow-lg" loading="lazy" decoding="async" />
-            <img src="/photos/20230723_123123.JPG" alt="Film Clinic" className="rounded-xl sm:rounded-2xl w-full h-36 sm:h-48 lg:h-64 object-cover shadow-lg mt-6 sm:mt-8" loading="lazy" decoding="async" />
-            <img src="/photos/20230723_123603.JPG" alt="Film Clinic" className="rounded-xl sm:rounded-2xl w-full h-36 sm:h-48 lg:h-64 object-cover shadow-lg" loading="lazy" decoding="async" />
-            <img src="/photos/P1144441.JPG" alt="Film Clinic" className="rounded-xl sm:rounded-2xl w-full h-36 sm:h-48 lg:h-64 object-cover shadow-lg mt-6 sm:mt-8" loading="lazy" decoding="async" />
+            <img src="/photos/20230719_150229.JPG" alt="Film Clinic mentor guiding participants on set" width="600" height="400" className="rounded-xl sm:rounded-2xl w-full h-36 sm:h-48 lg:h-64 object-cover shadow-lg" loading="lazy" decoding="async" />
+            <img src="/photos/20230723_123123.JPG" alt="Film Clinic team blocking a scene in pre-production" width="600" height="400" className="rounded-xl sm:rounded-2xl w-full h-36 sm:h-48 lg:h-64 object-cover shadow-lg mt-6 sm:mt-8" loading="lazy" decoding="async" />
+            <img src="/photos/20230723_123603.JPG" alt="Film Clinic crew preparing camera and lighting equipment" width="600" height="400" className="rounded-xl sm:rounded-2xl w-full h-36 sm:h-48 lg:h-64 object-cover shadow-lg" loading="lazy" decoding="async" />
+            <img src="/photos/P1144441.JPG" alt="Film Clinic participants collaborating on script development" width="600" height="400" className="rounded-xl sm:rounded-2xl w-full h-36 sm:h-48 lg:h-64 object-cover shadow-lg mt-6 sm:mt-8" loading="lazy" decoding="async" />
           </div>
         </div>
       </section>
@@ -146,7 +146,7 @@ export default function About() {
                 ))}
               </ul>
             </div>
-            <PhotoGrid photos={approachPhotos} columns={2} />
+            <PhotoGrid photos={approachPhotos} columns={2} altPrefix="Film Clinic training approach in action" />
           </div>
         </div>
       </section>
@@ -158,12 +158,12 @@ export default function About() {
           title="The Film Clinic Family"
           description="Meet the filmmakers, mentors, and creators who make Film Clinic what it is."
         />
-        <PhotoGrid photos={teamPhotos} columns={3} />
+        <PhotoGrid photos={teamPhotos} columns={3} altPrefix="Film Clinic Masterclass community and mentors" />
       </section>
 
       {/* CTA */}
       <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
-        <img src="/photos/IMG_7260.JPG" alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
+        <img src="/photos/IMG_7260.JPG" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
         <div className="absolute inset-0 bg-navy/85" />
         <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
           <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">

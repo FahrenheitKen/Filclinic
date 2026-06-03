@@ -4,6 +4,8 @@ import { FaWhatsapp } from 'react-icons/fa'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+import useAnalytics from './hooks/useAnalytics'
+import usePageMeta from './hooks/usePageTitle'
 
 const Home = lazy(() => import('./pages/Home'))
 const About = lazy(() => import('./pages/About'))
@@ -13,6 +15,12 @@ const Outcomes = lazy(() => import('./pages/Outcomes'))
 const Contact = lazy(() => import('./pages/Contact'))
 
 function NotFound() {
+  usePageMeta(
+    'Page Not Found',
+    "The page you're looking for doesn't exist on Film Clinic Masterclass.",
+    null,
+    { noindex: true }
+  )
   return (
     <div className="flex flex-col items-center justify-center py-32 px-4 text-center">
       <h1 className="font-heading text-6xl font-bold text-navy mb-4">404</h1>
@@ -28,6 +36,7 @@ function NotFound() {
 }
 
 export default function App() {
+  useAnalytics()
   return (
     <div className="min-h-screen bg-white flex flex-col">
       <ScrollToTop />
@@ -51,16 +60,16 @@ export default function App() {
           <span className="text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-gold">Our Partners</span>
           {/* Desktop: centered row */}
           <div className="hidden sm:flex items-center justify-center gap-16 mt-6">
-            <img src="/photos/FDA.png" alt="FDA" className="h-32 w-auto object-contain" />
-            <img src="/photos/Baraza.png" alt="Baraza" className="h-20 w-auto object-contain" />
+            <img src="/photos/FDA.png" alt="Film Development Authority partner logo" loading="lazy" decoding="async" className="h-32 w-auto object-contain" />
+            <img src="/photos/Baraza.png" alt="Baraza Media Lab partner logo" loading="lazy" decoding="async" className="h-20 w-auto object-contain" />
           </div>
           {/* Mobile: horizontal auto-scroll */}
           <div className="sm:hidden mt-6 overflow-hidden">
             <div className="flex items-center gap-12 animate-scroll-x w-max">
-              <img src="/photos/FDA.png" alt="FDA" className="h-20 w-auto object-contain flex-shrink-0" />
-              <img src="/photos/Baraza.png" alt="Baraza" className="h-14 w-auto object-contain flex-shrink-0" />
-              <img src="/photos/FDA.png" alt="FDA" className="h-20 w-auto object-contain flex-shrink-0" aria-hidden="true" />
-              <img src="/photos/Baraza.png" alt="Baraza" className="h-14 w-auto object-contain flex-shrink-0" aria-hidden="true" />
+              <img src="/photos/FDA.png" alt="Film Development Authority partner logo" loading="lazy" decoding="async" className="h-28 w-auto object-contain flex-shrink-0" />
+              <img src="/photos/Baraza.png" alt="Baraza Media Lab partner logo" loading="lazy" decoding="async" className="h-14 w-auto object-contain flex-shrink-0" />
+              <img src="/photos/FDA.png" alt="" loading="lazy" decoding="async" className="h-28 w-auto object-contain flex-shrink-0" aria-hidden="true" />
+              <img src="/photos/Baraza.png" alt="" loading="lazy" decoding="async" className="h-14 w-auto object-contain flex-shrink-0" aria-hidden="true" />
             </div>
           </div>
         </div>

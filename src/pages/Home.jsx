@@ -45,7 +45,7 @@ export default function Home() {
         {/* Background mosaic */}
         <div className="absolute inset-0 grid grid-cols-3 opacity-30">
           {heroPhotos.map((p, i) => (
-            <img key={i} src={`/photos/${p}`} alt="" className="w-full h-full object-cover" />
+            <img key={i} src={`/photos/${p}`} alt="" aria-hidden="true" className="w-full h-full object-cover" loading="eager" decoding="async" />
           ))}
         </div>
         <div className="absolute inset-0 bg-navy/90 lg:bg-gradient-to-r lg:from-navy lg:via-navy/95 lg:to-navy/80" />
@@ -73,18 +73,18 @@ export default function Home() {
           <div className="hidden lg:grid grid-cols-2 gap-4">
             <div className="space-y-4">
               <div className="rounded-2xl overflow-hidden shadow-2xl">
-                <img src="/photos/IMG_7387.jpg" alt="Film production" className="w-full h-48 object-cover" loading="eager" decoding="async" />
+                <img src="/photos/IMG_7387.jpg" alt="Film Clinic camera operator on set in Nakuru" width="600" height="400" className="w-full h-48 object-cover" loading="eager" decoding="async" fetchpriority="high" />
               </div>
               <div className="rounded-2xl overflow-hidden shadow-2xl">
-                <img src="/photos/IMG_8313.jpg" alt="Film production" className="w-full h-64 object-cover" loading="eager" decoding="async" />
+                <img src="/photos/IMG_8313.jpg" alt="Film Clinic crew lighting a scene during production" width="600" height="500" className="w-full h-64 object-cover" loading="eager" decoding="async" fetchpriority="high" />
               </div>
             </div>
             <div className="space-y-4 mt-8">
               <div className="rounded-2xl overflow-hidden shadow-2xl">
-                <img src="/photos/IMG_7464.jpg" alt="Film production" className="w-full h-64 object-cover" loading="eager" decoding="async" />
+                <img src="/photos/IMG_7464.jpg" alt="Director and cast rehearsing on a Film Clinic set" width="600" height="500" className="w-full h-64 object-cover" loading="eager" decoding="async" fetchpriority="high" />
               </div>
               <div className="rounded-2xl overflow-hidden shadow-2xl">
-                <img src="/photos/IMG_7641.jpg" alt="Film production" className="w-full h-48 object-cover" loading="eager" decoding="async" />
+                <img src="/photos/IMG_7641.jpg" alt="Cinematographer framing a shot during a Film Clinic bootcamp" width="600" height="400" className="w-full h-48 object-cover" loading="eager" decoding="async" fetchpriority="high" />
               </div>
             </div>
           </div>
@@ -101,7 +101,7 @@ export default function Home() {
         <div className="grid md:grid-cols-2 gap-6 sm:gap-8 mt-8 sm:mt-12">
           {/* Masterclass card */}
           <Link to="/programs/masterclass" className="group relative rounded-2xl overflow-hidden shadow-xl block">
-            <img src="/photos/IMG_1538.JPG" alt="Masterclass" className="w-full h-60 sm:h-72 md:h-80 object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
+            <img src="/photos/IMG_1538.JPG" alt="Film Clinic Masterclass workshop session in progress" width="800" height="600" className="w-full h-60 sm:h-72 md:h-80 object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
             <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/60 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8">
               <span className="bg-gold text-navy text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Masterclass</span>
@@ -113,7 +113,7 @@ export default function Home() {
           </Link>
           {/* Bootcamp card */}
           <Link to="/programs/bootcamp" className="group relative rounded-2xl overflow-hidden shadow-xl block">
-            <img src="/photos/IMG_1658.JPG" alt="Bootcamp" className="w-full h-60 sm:h-72 md:h-80 object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
+            <img src="/photos/IMG_1658.JPG" alt="Film Clinic Bootcamp team filming a short film on set" width="800" height="600" className="w-full h-60 sm:h-72 md:h-80 object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
             <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/60 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8">
               <span className="bg-gold text-navy text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Bootcamp</span>
@@ -159,7 +159,7 @@ export default function Home() {
           title="Real Production. Real Experience."
           description="Our participants work on actual film sets with professional equipment and mentorship."
         />
-        <PhotoGrid photos={processPhotos} columns={3} />
+        <PhotoGrid photos={processPhotos} columns={3} altPrefix="Behind the scenes at Film Clinic Masterclass" />
       </section>
 
       {/* What You Gain */}
@@ -172,10 +172,10 @@ export default function Home() {
           />
           <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-center mt-8 sm:mt-12">
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
-              <img src="/photos/IMG_3390.jpg" alt="Production" className="rounded-xl sm:rounded-2xl w-full h-32 sm:h-40 md:h-48 object-cover shadow-lg" loading="lazy" decoding="async" />
-              <img src="/photos/IMG_3538.jpg" alt="Production" className="rounded-xl sm:rounded-2xl w-full h-32 sm:h-40 md:h-48 object-cover shadow-lg mt-6 sm:mt-8" loading="lazy" decoding="async" />
-              <img src="/photos/IMG_3557.jpg" alt="Production" className="rounded-xl sm:rounded-2xl w-full h-32 sm:h-40 md:h-48 object-cover shadow-lg" loading="lazy" decoding="async" />
-              <img src="/photos/IMG_4501.jpg" alt="Production" className="rounded-xl sm:rounded-2xl w-full h-32 sm:h-40 md:h-48 object-cover shadow-lg mt-6 sm:mt-8" loading="lazy" decoding="async" />
+              <img src="/photos/IMG_3390.jpg" alt="Film Clinic participants reviewing footage on set" width="600" height="400" className="rounded-xl sm:rounded-2xl w-full h-32 sm:h-40 md:h-48 object-cover shadow-lg" loading="lazy" decoding="async" />
+              <img src="/photos/IMG_3538.jpg" alt="Sound recordist capturing dialogue during a Film Clinic shoot" width="600" height="400" className="rounded-xl sm:rounded-2xl w-full h-32 sm:h-40 md:h-48 object-cover shadow-lg mt-6 sm:mt-8" loading="lazy" decoding="async" />
+              <img src="/photos/IMG_3557.jpg" alt="Camera operator setting up a shot at a Film Clinic bootcamp" width="600" height="400" className="rounded-xl sm:rounded-2xl w-full h-32 sm:h-40 md:h-48 object-cover shadow-lg" loading="lazy" decoding="async" />
+              <img src="/photos/IMG_4501.jpg" alt="Film Clinic crew collaborating between takes" width="600" height="400" className="rounded-xl sm:rounded-2xl w-full h-32 sm:h-40 md:h-48 object-cover shadow-lg mt-6 sm:mt-8" loading="lazy" decoding="async" />
             </div>
             <div>
               <ul className="space-y-5">
@@ -202,7 +202,7 @@ export default function Home() {
           title="Moments from Film Clinic"
           description="A glimpse into our masterclasses, bootcamps, and productions."
         />
-        <PhotoGrid photos={galleryPhotos} columns={4} />
+        <PhotoGrid photos={galleryPhotos} columns={4} altPrefix="Film Clinic Masterclass gallery" />
       </section>
 
       {/* Powered By */}
@@ -226,7 +226,7 @@ export default function Home() {
 
       {/* CTA */}
       <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
-        <img src="/photos/_MG_9736.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
+        <img src="/photos/_MG_9736.jpg" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
         <div className="absolute inset-0 bg-navy/85" />
         <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
           <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4">

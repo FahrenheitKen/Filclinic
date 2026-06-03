@@ -33,21 +33,48 @@ export default function Contact() {
     name: '', email: '', phone: '', subject: '', message: '',
   })
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState('')
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSubmitted(true)
+    setSubmitting(true)
+    setError('')
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/info@filmclinicmasterclass.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          _subject: `[Film Clinic Contact] ${formData.subject}`,
+          message: formData.message,
+          _template: 'table',
+          _captcha: 'false',
+        }),
+      })
+      const data = await res.json().catch(() => ({}))
+      if (!res.ok || data.success === 'false') {
+        throw new Error(data.message || 'Something went wrong sending your message.')
+      }
+      setSubmitted(true)
+    } catch (err) {
+      setError(err.message || 'Failed to send. Please try again or email us directly.')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (
     <>
       {/* Hero */}
       <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
-        <img src="/photos/IMG_9621.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" decoding="async" />
+        <img src="/photos/IMG_9621.jpg" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" loading="eager" decoding="async" fetchpriority="high" />
         <div className="absolute inset-0 bg-navy/85" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <span className="inline-block bg-gold/20 text-gold-light px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase mb-4">
@@ -184,11 +211,16 @@ export default function Contact() {
                     />
                   </div>
 
+                  {error && (
+                    <p className="text-red-600 text-sm text-center" role="alert">{error}</p>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full bg-gold hover:bg-gold-dark text-navy font-bold px-8 py-4 rounded-xl text-sm uppercase tracking-wider transition-all duration-200 shadow-lg hover:shadow-xl"
+                    disabled={submitting}
+                    className="w-full bg-gold hover:bg-gold-dark disabled:opacity-60 disabled:cursor-not-allowed text-navy font-bold px-8 py-4 rounded-xl text-sm uppercase tracking-wider transition-all duration-200 shadow-lg hover:shadow-xl"
                   >
-                    Send Message
+                    {submitting ? 'Sending...' : 'Send Message'}
                   </button>
 
                   <p className="text-gray-400 text-xs text-center">
@@ -209,10 +241,10 @@ export default function Contact() {
             <h2 className="font-heading text-2xl sm:text-3xl font-bold text-navy mt-2">Where the Magic Happens</h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
-            <img src="/photos/IMG_0592.JPG" alt="Film Clinic Space" className="rounded-lg sm:rounded-xl w-full h-32 sm:h-40 md:h-48 object-cover shadow-md" loading="lazy" decoding="async" />
-            <img src="/photos/IMG_0652.JPG" alt="Film Clinic Space" className="rounded-lg sm:rounded-xl w-full h-32 sm:h-40 md:h-48 object-cover shadow-md" loading="lazy" decoding="async" />
-            <img src="/photos/IMG_1075.JPG" alt="Film Clinic Space" className="rounded-lg sm:rounded-xl w-full h-32 sm:h-40 md:h-48 object-cover shadow-md" loading="lazy" decoding="async" />
-            <img src="/photos/IMG_1538.JPG" alt="Film Clinic Space" className="rounded-lg sm:rounded-xl w-full h-32 sm:h-40 md:h-48 object-cover shadow-md" loading="lazy" decoding="async" />
+            <img src="/photos/IMG_0592.JPG" alt="Film Clinic Masterclass workspace in Nakuru" width="600" height="450" className="rounded-lg sm:rounded-xl w-full h-32 sm:h-40 md:h-48 object-cover shadow-md" loading="lazy" decoding="async" />
+            <img src="/photos/IMG_0652.JPG" alt="Film Clinic studio set used for productions" width="600" height="450" className="rounded-lg sm:rounded-xl w-full h-32 sm:h-40 md:h-48 object-cover shadow-md" loading="lazy" decoding="async" />
+            <img src="/photos/IMG_1075.JPG" alt="Film Clinic editing and post-production space" width="600" height="450" className="rounded-lg sm:rounded-xl w-full h-32 sm:h-40 md:h-48 object-cover shadow-md" loading="lazy" decoding="async" />
+            <img src="/photos/IMG_1538.JPG" alt="Film Clinic classroom during a workshop" width="600" height="450" className="rounded-lg sm:rounded-xl w-full h-32 sm:h-40 md:h-48 object-cover shadow-md" loading="lazy" decoding="async" />
           </div>
         </div>
       </section>

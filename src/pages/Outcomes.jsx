@@ -74,7 +74,7 @@ export default function Outcomes() {
     <>
       {/* Hero */}
       <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
-        <img src="/photos/IMG_7882.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" decoding="async" />
+        <img src="/photos/IMG_7882.jpg" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" loading="eager" decoding="async" fetchpriority="high" />
         <div className="absolute inset-0 bg-navy/85" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <span className="inline-block bg-gold/20 text-gold-light px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase mb-4">
@@ -121,7 +121,7 @@ export default function Outcomes() {
             title="Our Work in Action"
             description="Behind every photo is a filmmaker building their craft through hands-on production."
           />
-          <PhotoGrid photos={impactPhotos} columns={3} />
+          <PhotoGrid photos={impactPhotos} columns={3} altPrefix="Film Clinic participant work in action" />
         </div>
       </section>
 
@@ -162,12 +162,12 @@ export default function Outcomes() {
           title="Every Frame Tells a Story"
           description="From pre-production meetings to final takes, our participants live the filmmaking experience."
         />
-        <PhotoGrid photos={morePhotos} columns={4} />
+        <PhotoGrid photos={morePhotos} columns={4} altPrefix="Film Clinic Masterclass production moments" />
       </section>
 
       {/* CTA */}
       <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
-        <img src="/photos/IMG_8131.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
+        <img src="/photos/IMG_8131.jpg" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
         <div className="absolute inset-0 bg-navy/85" />
         <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
           <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">

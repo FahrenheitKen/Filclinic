@@ -33,7 +33,7 @@ export default function Masterclass() {
     <>
       {/* Hero */}
       <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
-        <img src="/photos/_MG_4559.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" decoding="async" />
+        <img src="/photos/_MG_4559.jpg" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" loading="eager" decoding="async" fetchpriority="high" />
         <div className="absolute inset-0 bg-navy/85" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <span className="inline-block bg-gold/20 text-gold-light px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase mb-4">
@@ -78,7 +78,7 @@ export default function Masterclass() {
             </div>
           </div>
           <div>
-            <PhotoGrid photos={masterclassPhotos} columns={2} />
+            <PhotoGrid photos={masterclassPhotos} columns={2} altPrefix="Film Clinic Masterclass workshop session" />
           </div>
         </div>
       </section>
@@ -133,8 +133,8 @@ export default function Masterclass() {
               </ul>
             </div>
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
-              <img src="/photos/_MG_4670.jpg" alt="Filmmakers" className="rounded-xl sm:rounded-2xl w-full h-36 sm:h-44 lg:h-56 object-cover shadow-lg" loading="lazy" decoding="async" />
-              <img src="/photos/_MG_0279.jpg" alt="Filmmakers" className="rounded-xl sm:rounded-2xl w-full h-36 sm:h-44 lg:h-56 object-cover shadow-lg mt-6 sm:mt-8" loading="lazy" decoding="async" />
+              <img src="/photos/_MG_4670.jpg" alt="Aspiring filmmakers in a Film Clinic Masterclass session" width="600" height="450" className="rounded-xl sm:rounded-2xl w-full h-36 sm:h-44 lg:h-56 object-cover shadow-lg" loading="lazy" decoding="async" />
+              <img src="/photos/_MG_0279.jpg" alt="Mentor giving feedback to Film Clinic Masterclass students" width="600" height="450" className="rounded-xl sm:rounded-2xl w-full h-36 sm:h-44 lg:h-56 object-cover shadow-lg mt-6 sm:mt-8" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>

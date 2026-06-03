@@ -1,4 +1,4 @@
-export default function PhotoGrid({ photos, columns = 3 }) {
+export default function PhotoGrid({ photos, columns = 3, altPrefix = 'Film Clinic Masterclass production photo' }) {
   const colClass = {
     2: 'grid-cols-1 sm:grid-cols-2',
     3: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3',
@@ -14,7 +14,9 @@ export default function PhotoGrid({ photos, columns = 3 }) {
         >
           <img
             src={`/photos/${photo}`}
-            alt={`Film Clinic production ${i + 1}`}
+            alt={`${altPrefix} ${i + 1}`}
+            width="800"
+            height="600"
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             loading="lazy"
             decoding="async"
