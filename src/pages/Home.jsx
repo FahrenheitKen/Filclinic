@@ -3,6 +3,7 @@ import SectionTitle from '../components/SectionTitle'
 import PhotoGrid from '../components/PhotoGrid'
 import usePageMeta from '../hooks/usePageTitle'
 import { HiAcademicCap, HiFilm, HiLightBulb, HiUserGroup, HiPlay } from 'react-icons/hi'
+import blogPosts from '../data/blogPosts'
 
 const heroPhotos = ['_MG_0009.jpg', '_MG_0010.jpg', '_MG_0028.jpg']
 const galleryPhotos = [
@@ -221,6 +222,52 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* From the Blog */}
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <SectionTitle
+          subtitle="From the Blog"
+          title="Filmmaking Tips & Insights"
+          description="Practical advice to help you grow as a filmmaker."
+        />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 sm:mt-12">
+          {blogPosts.slice(0, 3).map((post) => (
+            <Link
+              key={post.slug}
+              to={`/blog/${post.slug}`}
+              className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100"
+            >
+              <div className="aspect-[16/10] overflow-hidden">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  loading="lazy"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-6">
+                <span className="text-xs text-gold font-semibold uppercase tracking-wider">
+                  {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </span>
+                <h3 className="font-heading text-lg font-bold text-navy mt-2 mb-3 group-hover:text-gold transition-colors duration-200 leading-snug">
+                  {post.title}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed line-clamp-2">
+                  {post.excerpt}
+                </p>
+              </div>
+            </Link>
+          ))}
+        </div>
+        <div className="text-center mt-8">
+          <Link
+            to="/blog"
+            className="inline-block border-2 border-gold text-gold hover:bg-gold hover:text-navy font-bold px-8 py-3 rounded-full text-sm uppercase tracking-wider transition-all duration-200"
+          >
+            View All Articles
+          </Link>
         </div>
       </section>
 

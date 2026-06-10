@@ -14,6 +14,8 @@ const Bootcamp = lazy(() => import('./pages/Bootcamp'))
 const Outcomes = lazy(() => import('./pages/Outcomes'))
 const Gallery = lazy(() => import('./pages/Gallery'))
 const Contact = lazy(() => import('./pages/Contact'))
+const Blog = lazy(() => import('./pages/Blog'))
+const BlogPost = lazy(() => import('./pages/BlogPost'))
 
 function NotFound() {
   usePageMeta(
@@ -52,6 +54,8 @@ export default function App() {
             <Route path="/outcomes" element={<Outcomes />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
