@@ -145,14 +145,6 @@ const blogPosts = [
         caption: 'From script to screen \u2014 the journey starts with one story',
       },
       {
-        type: 'heading',
-        body: 'Ready to Turn Your Script Into a Film?',
-      },
-      {
-        type: 'text',
-        body: "At FilmClinic Bootcamp, participants learn more than scriptwriting. They gain practical experience in the entire film production process. If you've written a story and want to learn to bring it to life, FilmClinic Bootcamp provides the mentorship, skills, and hands-on experience needed to make it happen.",
-      },
-      {
         type: 'faq',
         items: [
           {
@@ -184,6 +176,14 @@ const blogPosts = [
             answer: 'Once your script is complete, the next step is production: casting, directing, shooting, and editing. Hands-on training programs like FilmClinic Bootcamp guide you through the entire filmmaking process so you can bring your script to life.',
           },
         ],
+      },
+      {
+        type: 'heading',
+        body: 'Ready to Turn Your Script Into a Film?',
+      },
+      {
+        type: 'text',
+        body: "At FilmClinic Bootcamp, participants learn more than scriptwriting. They gain practical experience in the entire film production process. If you've written a story and want to learn to bring it to life, FilmClinic Bootcamp provides the mentorship, skills, and hands-on experience needed to make it happen.",
       },
       {
         type: 'cta',
