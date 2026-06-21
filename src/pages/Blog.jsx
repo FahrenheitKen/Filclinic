@@ -79,12 +79,14 @@ export default function Blog() {
             description="Turn your passion into practice. Join Film Clinic and learn filmmaking by doing."
             light
           />
-          <Link
-            to="/contact"
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSexDjvcO2hbxiX-zodc8Ux5YkWXjxB3hHTj9jnDsKTLUOfjqg/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-gold hover:bg-gold-dark text-navy font-bold px-10 py-4 rounded-full text-sm uppercase tracking-wider transition-all duration-200 shadow-lg hover:shadow-xl mt-4"
           >
             Apply Now
-          </Link>
+          </a>
         </div>
       </section>
     </>

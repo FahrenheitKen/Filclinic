@@ -1,7 +1,6 @@
 import SectionTitle from '../components/SectionTitle'
 import PhotoGrid from '../components/PhotoGrid'
 import usePageMeta from '../hooks/usePageTitle'
-import { Link } from 'react-router-dom'
 
 const teamPhotos = [
   '_MG_9228.jpg', '_MG_9456 (1).jpg', '_MG_9493 (1).jpg',
@@ -172,12 +171,14 @@ export default function About() {
           <p className="text-gray-300 text-lg mb-8">
             Join our next cohort and experience practical filmmaking firsthand.
           </p>
-          <Link
-            to="/contact"
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSexDjvcO2hbxiX-zodc8Ux5YkWXjxB3hHTj9jnDsKTLUOfjqg/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-gold hover:bg-gold-dark text-navy font-bold px-10 py-4 rounded-full text-lg uppercase tracking-wider transition-all duration-200 shadow-lg inline-block"
           >
             Apply Now
-          </Link>
+          </a>
         </div>
       </section>
     </>

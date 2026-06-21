@@ -95,12 +95,14 @@ export default function Navbar() {
                 </Link>
               )
             )}
-            <Link
-              to="/contact"
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSexDjvcO2hbxiX-zodc8Ux5YkWXjxB3hHTj9jnDsKTLUOfjqg/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-gold hover:bg-gold-dark text-navy font-bold px-6 py-2.5 rounded-full text-sm uppercase tracking-wider transition-all duration-200 shadow-md hover:shadow-lg"
             >
               Apply Now
-            </Link>
+            </a>
           </div>
 
           {/* Mobile toggle */}
@@ -160,13 +162,15 @@ export default function Navbar() {
                 </Link>
               )
             )}
-            <Link
-              to="/contact"
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSexDjvcO2hbxiX-zodc8Ux5YkWXjxB3hHTj9jnDsKTLUOfjqg/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
               className="block bg-gold text-navy font-bold px-6 py-3 rounded-full text-sm uppercase tracking-wider text-center mt-4"
             >
               Apply Now
-            </Link>
+            </a>
           </div>
         </div>
       )}

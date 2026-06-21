@@ -64,12 +64,14 @@ export default function Home() {
             <p className="text-gray-300 text-base sm:text-lg md:text-xl leading-relaxed mb-6 sm:mb-8 max-w-xl">
               A structured filmmaking pipeline where creators learn, collaborate, and produce films through intensive masterclasses and hands-on bootcamps.
             </p>
-            <Link
-              to="/contact"
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSexDjvcO2hbxiX-zodc8Ux5YkWXjxB3hHTj9jnDsKTLUOfjqg/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-gold hover:bg-gold-dark text-navy font-bold px-6 py-3 sm:px-8 sm:py-4 rounded-full text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 shadow-lg hover:shadow-xl inline-block"
             >
               Apply Now
-            </Link>
+            </a>
           </div>
           <div className="hidden lg:grid grid-cols-2 gap-4">
             <div className="space-y-4">

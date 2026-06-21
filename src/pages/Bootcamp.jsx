@@ -199,12 +199,14 @@ export default function Bootcamp() {
           ))}
         </div>
         <div className="text-center mt-12">
-          <Link
-            to="/contact"
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSexDjvcO2hbxiX-zodc8Ux5YkWXjxB3hHTj9jnDsKTLUOfjqg/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-gold hover:bg-gold-dark text-navy font-bold px-10 py-4 rounded-full text-lg uppercase tracking-wider transition-all duration-200 shadow-lg inline-block"
           >
             Start Your Application
-          </Link>
+          </a>
         </div>
       </section>
     </>

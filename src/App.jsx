@@ -4,6 +4,7 @@ import { FaWhatsapp } from 'react-icons/fa'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+import FloatingPoster from './components/FloatingPoster'
 import useAnalytics from './hooks/useAnalytics'
 import usePageMeta from './hooks/usePageTitle'
 
@@ -82,6 +83,8 @@ export default function App() {
       </section>
 
       <Footer />
+
+      <FloatingPoster />
 
       {/* Floating WhatsApp Button */}
       <a

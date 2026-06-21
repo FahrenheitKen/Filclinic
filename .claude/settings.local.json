@@ -38,7 +38,8 @@
       "Bash(sudo sed -i 's#try_files \\\\$uri \\\\$uri.html \\\\$uri/ /index.html;#try_files $uri $uri.html /index.html;#' /etc/nginx/sites-available/filmclinicmasterclass.com)",
       "Bash(curl -sI -o /dev/null -w '%{http_code}\\\\n' https://filmclinicmasterclass.com/sitemap.xml?cb=__TRACKED_VAR__)",
       "Bash(curl -s https://filmclinicmasterclass.com/sitemap.xml?cb=__TRACKED_VAR__)",
-      "Bash(curl -s https://filmclinicmasterclass.com/robots.txt?cb=__TRACKED_VAR__)"
+      "Bash(curl -s https://filmclinicmasterclass.com/robots.txt?cb=__TRACKED_VAR__)",
+      "Bash(mv:*)"
     ]
   },
   "enableAllProjectMcpServers": true,
