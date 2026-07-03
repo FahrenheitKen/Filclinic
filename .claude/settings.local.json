@@ -39,7 +39,8 @@
       "Bash(curl -sI -o /dev/null -w '%{http_code}\\\\n' https://filmclinicmasterclass.com/sitemap.xml?cb=__TRACKED_VAR__)",
       "Bash(curl -s https://filmclinicmasterclass.com/sitemap.xml?cb=__TRACKED_VAR__)",
       "Bash(curl -s https://filmclinicmasterclass.com/robots.txt?cb=__TRACKED_VAR__)",
-      "Bash(mv:*)"
+      "Bash(mv:*)",
+      "Read(//etc/nginx/sites-enabled/**)"
     ]
   },
   "enableAllProjectMcpServers": true,
