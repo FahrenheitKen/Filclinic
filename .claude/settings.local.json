@@ -44,7 +44,18 @@
       "Bash(npm run *)",
       "Read(//etc/nginx/sites-enabled/**)",
       "Bash(git add *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(git fetch *)",
+      "Bash(grep -iE \"^C:|^/|\\\\\\\\\\\\\\\\\")",
+      "Bash(grep -iE \"error|:\\\\\\\\\\\\\\\\\")",
+      "Bash(cp C:/Users/HP/AppData/Local/Temp/claude/C--laragon-www-Filclinic/95e48b1b-710b-417a-9993-72e25117bd54/scratchpad/pexels/hero-river.jpg C:/laragon/www/Filclinic/public/photos/blog-lowbudget-hero.jpg)",
+      "Bash(cp C:/Users/HP/AppData/Local/Temp/claude/C--laragon-www-Filclinic/95e48b1b-710b-417a-9993-72e25117bd54/scratchpad/pexels/script-1.jpg C:/laragon/www/Filclinic/public/photos/blog-lowbudget-script.jpg)",
+      "Bash(cp C:/Users/HP/AppData/Local/Temp/claude/C--laragon-www-Filclinic/95e48b1b-710b-417a-9993-72e25117bd54/scratchpad/pexels/hero-cam.jpg C:/laragon/www/Filclinic/public/photos/blog-lowbudget-crew.jpg)",
+      "Bash(cat)",
+      "Bash(node scratch-opt.mjs)",
+      "Bash(node --input-type=module -e ' *)",
+      "Bash(node scratch-fix.mjs)"
     ]
   },
   "enableAllProjectMcpServers": true,

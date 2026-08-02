@@ -14,6 +14,7 @@ const Masterclass = lazy(() => import('./pages/Masterclass'))
 const Bootcamp = lazy(() => import('./pages/Bootcamp'))
 const Outcomes = lazy(() => import('./pages/Outcomes'))
 const Gallery = lazy(() => import('./pages/Gallery'))
+const Soila = lazy(() => import('./pages/Soila'))
 const Contact = lazy(() => import('./pages/Contact'))
 const Blog = lazy(() => import('./pages/Blog'))
 const BlogPost = lazy(() => import('./pages/BlogPost'))
@@ -54,6 +55,7 @@ export default function App() {
             <Route path="/programs/bootcamp" element={<Bootcamp />} />
             <Route path="/outcomes" element={<Outcomes />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/films/soila" element={<Soila />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />

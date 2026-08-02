@@ -20,6 +20,7 @@ const staticRoutes = [
   { path: '/programs/masterclass', changefreq: 'monthly', priority: '0.9', lastmod: '2026-05-06' },
   { path: '/programs/bootcamp', changefreq: 'monthly', priority: '0.9', lastmod: '2026-05-06' },
   { path: '/outcomes', changefreq: 'monthly', priority: '0.7', lastmod: '2026-05-06' },
+  { path: '/films/soila', changefreq: 'weekly', priority: '0.9', lastmod: '2026-08-02' },
   { path: '/gallery', changefreq: 'monthly', priority: '0.7', lastmod: '2026-05-06' },
   { path: '/contact', changefreq: 'yearly', priority: '0.6', lastmod: '2026-05-06' },
 ]

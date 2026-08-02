@@ -9,7 +9,8 @@ const cohorts = [
     id: 'cohort-1',
     name: 'Cohort 1',
     date: 'June 2025',
-    description: 'Our inaugural bootcamp cohort brought together passionate filmmakers for an intensive hands-on production experience at Baraza Media Lab.',
+    description: 'Our inaugural bootcamp cohort brought together passionate filmmakers for an intensive hands-on production experience at Baraza Media Lab — culminating in their debut short film, Soila.',
+    film: { title: 'Soila', path: '/films/soila' },
     photos: [
       '_MG_7824.jpg', '_MG_7832.jpg', '_MG_7838.jpg', '_MG_7852.jpg',
       '_MG_7876.jpg', '_MG_7894.jpg', '_MG_7939.jpg', '_MG_7960.jpg',
@@ -119,6 +120,16 @@ export default function Gallery() {
               title={cohort.name}
               description={cohort.description}
             />
+            {cohort.film && (
+              <div className="text-center -mt-4 mb-2">
+                <Link
+                  to={cohort.film.path}
+                  className="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-navy font-bold px-6 py-2.5 rounded-full text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 shadow-md hover:shadow-lg"
+                >
+                  Watch their film: {cohort.film.title} &rarr;
+                </Link>
+              </div>
+            )}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 mt-8 sm:mt-12">
               {visiblePhotos.map((photo, i) => (
                 <button

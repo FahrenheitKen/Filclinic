@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
-const DISMISSED_KEY = 'poster_dismissed'
+const DISMISSED_KEY = 'soila_poster_dismissed'
 
 export default function FloatingPoster() {
   const [visible, setVisible] = useState(false)
@@ -31,18 +32,14 @@ export default function FloatingPoster() {
           &times;
         </button>
 
-        {/* Poster linked to application form */}
-        <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSexDjvcO2hbxiX-zodc8Ux5YkWXjxB3hHTj9jnDsKTLUOfjqg/viewform"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        {/* Soila premiere poster linked to the film page */}
+        <Link to="/films/soila" onClick={close}>
           <img
-            src="/photos/cohort2-poster.jpg"
-            alt="Film Clinic Bootcamp 2026 Cohort 2 - Apply Now"
+            src="/photos/soila-poster-teaser.jpg"
+            alt="Soila — Free to Become. Premieres 21 August 2026 on ustadifilms.ke"
             className="w-full rounded-xl shadow-2xl cursor-pointer"
           />
-        </a>
+        </Link>
       </div>
     </div>
   )

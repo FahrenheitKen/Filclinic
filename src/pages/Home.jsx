@@ -129,6 +129,52 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Featured Film — Soila */}
+      <section className="relative overflow-hidden bg-navy-dark">
+        <img
+          src="/photos/soila-bts/soila-bts-15.jpg"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover opacity-20"
+          loading="lazy"
+          decoding="async"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-dark via-navy-dark/90 to-navy-dark/60" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 grid lg:grid-cols-[220px_1fr] gap-8 lg:gap-12 items-center">
+          <Link to="/films/soila" className="mx-auto w-40 sm:w-52 lg:w-full max-w-[220px] group">
+            <div className="rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 transition-transform duration-300 group-hover:-translate-y-1">
+              <img
+                src="/photos/soila-poster-teaser.jpg"
+                alt="Soila film poster — Free to Become"
+                width="1200"
+                height="1697"
+                className="w-full h-auto"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </Link>
+          <div className="text-center lg:text-left">
+            <span className="inline-block bg-gold/20 text-gold-light px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase mb-5">
+              Featured Film · Cohort 1
+            </span>
+            <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-none mb-2">
+              Soila
+            </h2>
+            <p className="text-gold italic font-heading text-lg sm:text-xl mb-4">“Free to Become”</p>
+            <p className="text-gray-300 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 mb-6">
+              The first film from our six-week bootcamp — written, shot, and edited entirely by Cohort 1. Premieres <span className="text-white font-semibold">21 August 2026</span> on ustadifilms.ke.
+            </p>
+            <Link
+              to="/films/soila"
+              className="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-navy font-bold px-8 py-3.5 rounded-full text-sm uppercase tracking-wider transition-all duration-200 shadow-lg hover:shadow-xl"
+            >
+              <HiPlay className="text-lg" /> Watch the Story
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* How It Works */}
       <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

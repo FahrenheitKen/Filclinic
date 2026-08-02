@@ -13,7 +13,14 @@ const navLinks = [
       { name: 'Bootcamp', path: '/programs/bootcamp' },
     ],
   },
-  { name: 'Outcomes', path: '/outcomes' },
+  {
+    name: 'Outcomes',
+    path: '/outcomes',
+    children: [
+      { name: 'Outcomes & Impact', path: '/outcomes' },
+      { name: 'Soila — Cohort 1', path: '/films/soila' },
+    ],
+  },
   { name: 'Gallery', path: '/gallery' },
   { name: 'Blog', path: '/blog' },
   { name: 'Contact', path: '/contact' },
@@ -21,22 +28,25 @@ const navLinks = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
-  const [dropdownOpen, setDropdownOpen] = useState(false)
-  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false)
+  const [openDropdown, setOpenDropdown] = useState(null) // desktop: link.path or null
+  const [mobileOpenDropdown, setMobileOpenDropdown] = useState(null)
   const { pathname } = useLocation()
-  const dropdownRef = useRef(null)
+  const navRef = useRef(null)
 
   useEffect(() => {
     function handleClickOutside(e) {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-        setDropdownOpen(false)
+      if (navRef.current && !navRef.current.contains(e.target)) {
+        setOpenDropdown(null)
       }
     }
     document.addEventListener('mousedown', handleClickOutside)
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
-  const isProgramsActive = pathname.startsWith('/programs')
+  const isParentActive = (link) =>
+    pathname === link.path ||
+    pathname.startsWith(`${link.path}/`) ||
+    link.children?.some((c) => pathname === c.path)
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
@@ -47,28 +57,28 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-8" ref={navRef}>
             {navLinks.map((link) =>
               link.children ? (
-                <div key={link.path} className="relative" ref={dropdownRef}>
+                <div key={link.path} className="relative">
                   <button
-                    onClick={() => setDropdownOpen(!dropdownOpen)}
+                    onClick={() => setOpenDropdown(openDropdown === link.path ? null : link.path)}
                     className={`flex items-center gap-1 text-sm font-semibold uppercase tracking-wider transition-colors duration-200 ${
-                      isProgramsActive
+                      isParentActive(link)
                         ? 'text-gold border-b-2 border-gold pb-1'
                         : 'text-navy hover:text-gold'
                     }`}
                   >
                     {link.name}
-                    <HiChevronDown className={`text-xs transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`} />
+                    <HiChevronDown className={`text-xs transition-transform duration-200 ${openDropdown === link.path ? 'rotate-180' : ''}`} />
                   </button>
-                  {dropdownOpen && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white rounded-xl shadow-xl border border-gray-100 py-2 min-w-[200px]">
+                  {openDropdown === link.path && (
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white rounded-xl shadow-xl border border-gray-100 py-2 min-w-[210px]">
                       {link.children.map((child) => (
                         <Link
                           key={child.path}
                           to={child.path}
-                          onClick={() => setDropdownOpen(false)}
+                          onClick={() => setOpenDropdown(null)}
                           className={`block px-5 py-3 text-sm font-medium transition-colors duration-200 ${
                             pathname === child.path
                               ? 'text-gold bg-gold/5'
@@ -124,21 +134,21 @@ export default function Navbar() {
               link.children ? (
                 <div key={link.path}>
                   <button
-                    onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
+                    onClick={() => setMobileOpenDropdown(mobileOpenDropdown === link.path ? null : link.path)}
                     className={`flex items-center justify-between w-full text-sm font-semibold uppercase tracking-wider py-2 ${
-                      isProgramsActive ? 'text-gold' : 'text-navy'
+                      isParentActive(link) ? 'text-gold' : 'text-navy'
                     }`}
                   >
                     {link.name}
-                    <HiChevronDown className={`text-xs transition-transform duration-200 ${mobileDropdownOpen ? 'rotate-180' : ''}`} />
+                    <HiChevronDown className={`text-xs transition-transform duration-200 ${mobileOpenDropdown === link.path ? 'rotate-180' : ''}`} />
                   </button>
-                  {mobileDropdownOpen && (
+                  {mobileOpenDropdown === link.path && (
                     <div className="pl-4 border-l-2 border-gold/30 ml-2 space-y-1">
                       {link.children.map((child) => (
                         <Link
                           key={child.path}
                           to={child.path}
-                          onClick={() => { setOpen(false); setMobileDropdownOpen(false) }}
+                          onClick={() => { setOpen(false); setMobileOpenDropdown(null) }}
                           className={`block text-sm font-medium py-2 ${
                             pathname === child.path ? 'text-gold' : 'text-navy/70 hover:text-gold'
                           }`}

@@ -1,5 +1,248 @@
 const blogPosts = [
   {
+    slug: 'low-budget-filmmaking-tips',
+    title: 'Low Budget Filmmaking: How to Make a Great Film Without a Big Budget',
+    metaDescription:
+      "Low budget filmmaking isn't about money — it's about preparation. Practical film production planning tips to help beginners finish their first short film.",
+    date: '2026-08-02',
+    author: 'Film Clinic',
+    image: '/photos/blog-lowbudget-hero.jpg',
+    excerpt:
+      'Many aspiring filmmakers believe a bigger budget is all that stands between them and their first film. The truth? Low budget filmmaking was never really about the money — it was about preparation.',
+    keywords:
+      "low budget filmmaking, film production planning, filmmaking for beginners, short film production, film budgeting, film production management, how to make a short film with no money, low budget filmmaking tips, beginner's guide to low budget filmmaking, filmmaking Kenya",
+    content: [
+      {
+        type: 'text',
+        body: '“If only I had more money, I’d finally make my film.”',
+      },
+      {
+        type: 'text',
+        body: 'It’s a thought that crosses the minds of countless aspiring filmmakers. Many believe they need expensive cameras, professional lighting, a large crew, or substantial funding — and that belief becomes the reason their film never moves beyond the idea stage.',
+      },
+      {
+        type: 'text',
+        body: 'Scripts remain unfinished. Concepts stay trapped in notebooks. Another year passes waiting for the “right time.”',
+      },
+      {
+        type: 'text',
+        body: 'But what if the biggest obstacle isn’t your budget? What if low budget filmmaking was never really about the money at all? The truth may surprise you.',
+      },
+      {
+        type: 'heading',
+        body: 'The Biggest Mistake in Low Budget Filmmaking Isn’t a Small Budget',
+      },
+      {
+        type: 'text',
+        body: 'Independent filmmakers often believe limited finances are what prevent great films from being made. In reality, most productions fail not because they lacked money, but because they lacked preparation.',
+      },
+      {
+        type: 'text',
+        body: 'A poorly planned production can exhaust even a generous budget:',
+      },
+      {
+        type: 'list',
+        items: [
+          'Locations become unavailable',
+          'Actors miss call times',
+          'Essential props are forgotten',
+          'Scenes take longer than expected',
+          'Crew members lose direction',
+        ],
+      },
+      {
+        type: 'text',
+        body: 'Every unexpected delay increases costs, creates frustration, and compromises the final film. A small budget doesn’t destroy productions — poor film production planning does.',
+      },
+      {
+        type: 'heading',
+        body: 'Great Films Are Designed Long Before the Camera Rolls',
+      },
+      {
+        type: 'text',
+        body: 'Every successful production begins with thoughtful pre-production.',
+      },
+      {
+        type: 'text',
+        body: 'Before the first frame is captured, experienced filmmakers have already made hundreds of creative and logistical decisions. They’ve broken down the script, scheduled every shooting day, assigned responsibilities to the crew, anticipated challenges, and made sure every department understands the vision.',
+      },
+      {
+        type: 'text',
+        body: 'This preparation isn’t glamorous. It won’t appear in the final credits. But it is often the difference between a completed film and an abandoned project — especially when you’re shooting a short film on a low budget.',
+      },
+      {
+        type: 'image',
+        src: '/photos/blog-lowbudget-script.jpg',
+        alt: 'Filmmaker reviewing a marked-up script breakdown during pre-production',
+        caption: 'Great films are designed long before the camera rolls — in pre-production.',
+      },
+      {
+        type: 'heading',
+        body: 'Write the Story Your Budget Can Afford',
+      },
+      {
+        type: 'text',
+        body: 'One of the smartest low budget filmmaking tips any filmmaker can follow is to write for the resources they already have.',
+      },
+      {
+        type: 'list',
+        items: [
+          'If you have access to one beautiful location, make it part of the story.',
+          'If you have two talented actors, build your narrative around them.',
+          'If natural light is your strongest asset, use it creatively.',
+        ],
+      },
+      {
+        type: 'text',
+        body: 'Many beginners write stories that demand expensive locations, visual effects, or dozens of actors before they’ve completed a single project. Effective filmmaking for beginners starts by embracing limitations rather than fighting them. Creativity often thrives exactly where resources are scarce.',
+      },
+      {
+        type: 'heading',
+        body: 'Every Minute on Set Costs Something',
+      },
+      {
+        type: 'text',
+        body: 'When people discuss film budgeting, they usually focus on equipment and transport. But time is one of the most valuable resources in film production management.',
+      },
+      {
+        type: 'text',
+        body: 'Every forgotten prop, every missing costume, every unnecessary retake, and every scene that wasn’t properly prepared adds hidden costs to your production. Even when working with volunteers, respecting everyone’s time leads to a more productive and enjoyable set.',
+      },
+      {
+        type: 'callout',
+        body: 'Preparation doesn’t just save money. It builds confidence within the team.',
+      },
+      {
+        type: 'heading',
+        body: 'Your Crew Is More Valuable Than Your Equipment',
+      },
+      {
+        type: 'text',
+        body: 'A camera doesn’t make a film — people do.',
+      },
+      {
+        type: 'text',
+        body: 'One of the greatest strengths in independent filmmaking is a committed team working toward a shared vision. Strong communication, clear leadership, and mutual respect consistently produce better results than expensive equipment operated by an unprepared crew.',
+      },
+      {
+        type: 'text',
+        body: 'A successful production depends on everyone understanding their role, from the director and actors to the continuity supervisor and production assistants.',
+      },
+      {
+        type: 'image',
+        src: '/photos/blog-lowbudget-crew.jpg',
+        alt: 'Young filmmaker operating a camera rig on location during a low budget production',
+        caption: 'A camera doesn’t make a film — a committed crew does.',
+      },
+      {
+        type: 'heading',
+        body: 'The Secret Most Beginner Filmmakers Never Learn',
+      },
+      {
+        type: 'text',
+        body: 'Many people search online for how to make a short film with no money, hoping to discover a magic trick that makes filmmaking easier.',
+      },
+      {
+        type: 'text',
+        body: 'The truth is much simpler. Experienced filmmakers don’t avoid problems because they have bigger budgets. They avoid problems because they know how to prepare. They understand:',
+      },
+      {
+        type: 'list',
+        items: [
+          'Film production planning',
+          'Film production management',
+          'Screenwriting',
+          'Film directing',
+          'Continuity management',
+          'Crew coordination',
+          'Production scheduling',
+        ],
+      },
+      {
+        type: 'text',
+        body: 'These aren’t expensive tools. They’re professional skills — and they’re the reason some filmmakers consistently complete projects while others never move past the planning stage.',
+      },
+      {
+        type: 'heading',
+        body: 'Before You Raise More Money, Raise Your Knowledge',
+      },
+      {
+        type: 'text',
+        body: 'If you’re searching for a beginner’s guide to low budget filmmaking, you’re already asking the right questions. But here’s a better one:',
+      },
+      {
+        type: 'callout',
+        body: 'If someone handed you KES 1 million tomorrow, would you know how to manage a professional production from start to finish?',
+      },
+      {
+        type: 'list',
+        items: [
+          'Would your film production planning be ready?',
+          'Would your shooting schedule work?',
+          'Would your crew know exactly what to do?',
+          'Would your script be ready for production?',
+        ],
+      },
+      {
+        type: 'text',
+        body: 'Money doesn’t automatically solve production problems. Preparation does. Knowledge does. Experience does.',
+      },
+      {
+        type: 'text',
+        body: 'That’s why the filmmakers who consistently succeed aren’t always the ones with the biggest budgets — they’re the ones who understand the filmmaking process from script to screen.',
+      },
+      {
+        type: 'text',
+        body: 'Learning how to shoot a film on a small budget isn’t simply about spending less. It’s about making smarter creative decisions, avoiding costly mistakes, and understanding how every stage of production connects. Those skills stay with you long after the budget has been spent.',
+      },
+      {
+        type: 'faq',
+        items: [
+          {
+            question: 'Can you make a good film with no money?',
+            answer: 'Yes. Films made with minimal budgets succeed when the script is written around available resources and the production is carefully planned. Strong pre-production, a committed crew, and a story that fits your locations and cast matter far more than expensive gear.',
+          },
+          {
+            question: 'What is the most important stage of low budget film production?',
+            answer: 'Pre-production. Script breakdowns, shooting schedules, call sheets, and location scouting eliminate the delays that quietly drain small budgets once you’re on set.',
+          },
+          {
+            question: 'What equipment do I need to shoot a short film on a budget?',
+            answer: 'Far less than most beginners assume. A capable camera, clean audio recording, and controlled natural light will carry a short film. Sound quality and lighting affect how professional your film feels more than camera price does.',
+          },
+          {
+            question: 'How do I plan a shooting schedule for a low budget film?',
+            answer: 'Break the script down scene by scene, group scenes by location, and schedule around your actors’ and locations’ availability. Always build in buffer time for the scenes you know are complex.',
+          },
+        ],
+      },
+      {
+        type: 'heading',
+        body: 'Continue Learning, Keep Creating',
+      },
+      {
+        type: 'text',
+        body: 'Every filmmaker starts somewhere. Whether you’re producing your first short film or refining your production skills, mastering low budget filmmaking is one of the most valuable investments you can make in your career.',
+      },
+      {
+        type: 'text',
+        body: 'The more you understand film production planning, screenwriting, directing, budgeting, and collaboration, the more confident you’ll become on every project.',
+      },
+      {
+        type: 'text',
+        body: 'Sometimes the difference between an unfinished idea and a completed film isn’t a larger budget — it’s knowing exactly what to do when the camera starts rolling.',
+      },
+      {
+        type: 'text',
+        body: 'If you’re passionate about filmmaking and want to deepen your understanding through practical experience, learning alongside other aspiring filmmakers and industry practitioners can accelerate your growth in ways theory alone never will.',
+      },
+      {
+        type: 'cta',
+        body: 'Ready to move from idea to finished film? Join the Film Clinic Masterclass for practical, hands-on film production training built around real projects.',
+      },
+    ],
+  },
+  {
     slug: 'how-to-build-a-filmmaking-portfolio',
     title: "How to Build a Filmmaking Portfolio That Actually Gets Noticed (A Beginner's Guide)",
     metaDescription: 'Learn how to create a filmmaking portfolio that gets noticed. A beginner-friendly guide to building a filmmaker portfolio, cutting a strong film showreel, and standing out in the film industry.',
